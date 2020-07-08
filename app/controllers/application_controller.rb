@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   def hello
     redirect_to controller: 'sessions', action: 'new' unless session[:name]
+    end
   end
-  
+
+  def current_user
+    session[:username] = params[:username]
+  end
+
 end
